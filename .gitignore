@@ -1,0 +1,3 @@
+tests/*.svg
+tests/*.png
+.DS_Store
