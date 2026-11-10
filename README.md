@@ -1,6 +1,6 @@
 # Snail Trail Cursive
 
-A cursive handwriting app for kids that runs in the browser. Trace joined lowercase letters, cursive capitals, numbers, and words (including names) with a finger or Apple Pencil. A snail follows along, and kids earn stars and stickers.
+A cursive handwriting app for kids that runs in the browser. Trace joined lowercase letters, cursive capitals, numbers, and words (including names) with a finger or Apple Pencil. A snail follows along, and kids earn stars and stickers they can place anywhere on the home screen.
 
 **Live site:** https://00zero.github.io/snail-trail/
 
