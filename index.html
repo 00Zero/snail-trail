@@ -180,7 +180,7 @@ textarea{width:100%;min-height:90px;font-size:17px}
 const L = {
   a:{ov:1,d:"M 68,-88 C 60,-102 32,-100 24,-78 C 16,-55 20,-8 40,-5 C 56,-3 66,-35 70,-100 L 68,-30 C 67,-8 76,0 88,0",w:88},
   b:{d:"M 60,-150 C 66,-185 50,-200 42,-188 C 32,-172 33,-100 33,-25 C 34,-5 52,-2 64,-15 C 76,-30 76,-70 64,-92 C 70,-90 78,-90 88,-90",w:88,hi:1},
-  c:{d:"M 62,-92 C 52,-102 28,-98 22,-72 C 16,-45 22,-5 45,-2 C 55,0 62,0 72,0",w:72},
+  c:{ld:[[18,-5],[18,-80]],d:"M 45,-98 C 54,-104 66,-96 60,-88 C 55,-82 46,-86 44,-92 C 34,-100 20,-90 18,-65 C 15,-35 24,-3 46,-2 C 56,-1 64,0 74,0",w:74},
   d:{ov:1,d:"M 64,-88 C 56,-102 30,-100 22,-78 C 14,-55 18,-8 38,-5 C 54,-3 64,-35 68,-100 L 70,-195 L 68,-30 C 67,-8 76,0 88,0",w:88},
   e:{d:"M 55,-55 C 66,-70 62,-96 46,-95 C 28,-94 22,-65 24,-40 C 26,-12 40,0 66,0",w:66},
   f:{d:"M 60,-150 C 66,-185 50,-200 42,-188 C 32,-172 33,-100 34,55 C 34,90 52,92 56,70 C 60,48 46,18 36,4 C 44,1 54,0 70,0",w:70},
@@ -205,6 +205,36 @@ const L = {
   y:{d:"M 18,-90 C 22,-100 36,-102 38,-80 C 38,-50 36,-15 46,-6 C 58,3 68,-30 72,-100 L 70,55 C 70,90 60,98 50,96 C 38,94 32,75 40,55 C 48,35 62,12 77,4 C 84,1 88,0 94,0",w:94},
   z:{d:"M 18,-90 C 30,-102 62,-100 62,-75 C 62,-45 40,-10 30,-4 C 52,-12 70,0 70,30 C 70,70 52,96 40,94 C 26,92 28,70 42,50 C 54,34 70,8 86,2 C 90,1 94,0 98,0",w:98}
 };
+/* Capitals: s = strokes in order. j = the last stroke ends on the baseline and joins the next letter. */
+const U = {
+  A:{s:["M 92,-180 C 80,-205 35,-200 22,-150 C 10,-100 15,-10 45,-5 C 70,0 88,-60 96,-200 L 94,-40 C 93,-10 100,0 116,0"],w:116,j:1},
+  B:{s:["M 42,-195 L 30,0 L 38,-180 C 50,-205 100,-205 100,-160 C 100,-125 75,-110 58,-108 C 105,-102 115,-55 100,-25 C 85,2 50,4 30,0"],w:150},
+  C:{s:["M 100,-170 C 104,-195 80,-205 60,-198 C 25,-185 12,-120 14,-80 C 16,-25 40,-2 65,-2 C 80,-2 92,0 104,0"],w:104,j:1},
+  D:{s:["M 50,-195 C 48,-130 44,-60 36,-10 C 30,8 10,4 12,-8 C 14,-18 30,-14 44,-6 C 80,10 118,-30 118,-100 C 118,-160 90,-200 50,-200 C 30,-200 22,-190 26,-182"],w:155},
+  E:{s:["M 92,-180 C 90,-200 60,-205 45,-190 C 30,-175 38,-130 70,-120 C 76,-118 74,-112 66,-112 C 30,-108 12,-80 14,-50 C 16,-15 45,0 70,0 C 84,0 94,0 104,0"],w:104,j:1},
+  F:{s:["M 20,-185 C 45,-205 80,-180 115,-198","M 74,-195 C 72,-130 66,-50 52,-15 C 42,8 18,6 12,-10","M 40,-100 L 95,-100"],w:138},
+  G:{s:["M 100,-170 C 104,-195 80,-205 60,-198 C 25,-185 12,-120 14,-80 C 16,-25 40,-2 62,-2 C 90,-2 104,-40 104,-90 L 102,40 C 102,90 88,98 76,96 C 62,94 56,75 64,55 C 72,35 88,10 108,2 C 112,0 116,0 124,0"],w:124,j:1},
+  H:{s:["M 10,-170 C 20,-200 45,-205 45,-170 C 45,-110 40,-50 32,0","M 110,-200 C 106,-130 100,-60 96,0","M 40,-100 C 60,-110 80,-95 102,-100"],w:138},
+  I:{s:["M 10,-120 C 20,-150 60,-200 90,-200 C 110,-200 100,-170 85,-140 C 70,-100 62,-40 50,-12 C 40,8 15,6 8,-10"],w:118},
+  J:{s:["M 10,-120 C 20,-150 60,-200 90,-200 C 110,-200 100,-170 85,-140 C 70,-100 62,-20 55,40 C 50,90 30,98 22,85 C 12,68 40,25 70,6 C 80,1 88,0 100,0"],w:100,j:1},
+  K:{s:["M 10,-170 C 20,-200 45,-205 45,-170 C 45,-110 40,-50 32,0","M 110,-190 C 90,-150 60,-110 45,-100 C 70,-90 80,-40 86,-15 C 90,-2 98,0 112,0"],w:112,j:1},
+  L:{s:["M 95,-170 C 100,-195 80,-205 66,-192 C 50,-178 48,-120 40,-60 C 34,-20 24,-4 12,-6 C 0,-8 4,-22 18,-18 C 40,-12 60,0 80,0 C 92,0 100,0 110,0"],w:110,j:1},
+  M:{s:["M 10,-5 C 18,-120 32,-195 48,-195 C 62,-195 55,-100 50,0 C 58,-110 72,-195 90,-195 C 106,-195 100,-100 95,0 C 103,-110 118,-195 134,-195 C 150,-195 145,-100 142,-40 C 140,-12 148,0 162,0"],w:162,j:1},
+  N:{s:["M 10,-5 C 18,-120 32,-195 48,-195 C 62,-195 55,-100 50,0 C 58,-110 72,-195 90,-195 C 106,-195 100,-100 97,-40 C 95,-12 103,0 117,0"],w:117,j:1},
+  O:{s:["M 75,-195 C 40,-200 14,-150 14,-100 C 14,-35 38,0 62,0 C 92,0 110,-50 108,-110 C 106,-165 88,-200 72,-198 C 60,-196 58,-182 72,-180 C 86,-178 100,-182 112,-188"],w:140},
+  P:{s:["M 42,-195 L 30,0 L 38,-160 C 46,-200 110,-210 108,-150 C 106,-110 70,-95 40,-100"],w:138},
+  Q:{s:["M 22,-150 C 30,-200 110,-205 108,-130 C 106,-60 70,-4 38,-2 C 18,0 14,-22 32,-22 C 55,-22 75,0 110,0"],w:110,j:1},
+  R:{s:["M 42,-195 L 30,0 L 38,-160 C 46,-200 110,-210 108,-150 C 106,-110 70,-98 46,-100 C 70,-90 80,-40 86,-15 C 90,-2 98,0 112,0"],w:112,j:1},
+  S:{s:["M 10,-30 C 30,-90 60,-170 92,-200 C 100,-206 104,-196 96,-184 C 80,-160 62,-140 70,-110 C 80,-75 102,-60 98,-30 C 94,0 50,6 30,-5 C 18,-12 22,-25 34,-20"],w:124},
+  T:{s:["M 15,-185 C 40,-205 85,-180 120,-198","M 78,-195 C 76,-130 70,-50 56,-15 C 46,8 22,6 16,-10"],w:134},
+  U:{s:["M 15,-170 C 20,-200 40,-205 42,-180 C 44,-120 36,-40 50,-12 C 62,10 92,-10 100,-60 L 104,-200 L 101,-40 C 100,-10 106,0 122,0"],w:122,j:1},
+  V:{s:["M 15,-170 C 20,-200 40,-205 42,-180 C 44,-120 50,-30 62,-4 C 70,8 85,0 92,-40 C 98,-90 104,-160 110,-198 C 116,-196 122,-196 130,-198"],w:142},
+  W:{s:["M 15,-170 C 20,-200 40,-205 42,-180 C 44,-120 44,-30 54,-6 C 62,10 80,-20 84,-110 C 88,-20 100,6 110,-4 C 124,-20 128,-150 132,-198 C 138,-196 144,-196 152,-198"],w:166},
+  X:{s:["M 12,-160 C 20,-200 50,-205 58,-170 C 66,-120 70,-50 84,-14 C 90,-2 98,0 112,0","M 110,-190 L 22,-5"],w:128},
+  Y:{s:["M 15,-170 C 20,-200 40,-205 42,-180 C 44,-120 36,-40 50,-12 C 62,10 92,-10 100,-60 L 104,-200 L 98,40 C 96,90 80,98 70,96 C 56,94 50,75 58,55 C 66,35 82,10 102,2 C 108,0 112,0 120,0"],w:120,j:1},
+  Z:{s:["M 18,-170 C 30,-205 100,-205 100,-160 C 100,-120 70,-100 50,-95 C 80,-90 100,-60 98,-10 C 96,50 80,96 62,95 C 46,94 46,72 62,55 C 76,40 96,10 112,2 C 116,0 120,0 128,0"],w:128,j:1}
+};
+const NAMES={a:"ay",b:"bee",c:"see",d:"dee",e:"ee",f:"eff",g:"gee",h:"aitch",i:"eye",j:"jay",k:"kay",l:"ell",m:"em",n:"en",o:"oh",p:"pee",q:"queue",r:"are",s:"ess",t:"tee",u:"you",v:"vee",w:"double you",x:"ex",y:"why",z:"zee"};
 const DIG = {
   "0":["M 50,-200 C 12,-200 5,-130 5,-100 C 5,-40 20,0 50,0 C 80,0 95,-40 95,-100 C 95,-160 85,-200 50,-200"],
   "1":["M 28,-168 L 56,-200 L 56,0"],
@@ -218,8 +248,10 @@ const DIG = {
   "9":["M 90,-166 C 85,-192 65,-200 50,-200 C 25,-200 10,-180 10,-150 C 10,-118 30,-102 50,-102 C 72,-102 90,-120 92,-150 L 92,0"]
 };
 const ALPHA = "abcdefghijklmnopqrstuvwxyz".split("");
+const CAPS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 const DIGITS = "0123456789".split("");
 const LISTS = [
+  {id:"names", name:"Names", words:["Ava","Leo","Mia","Sam","Kai","Zoe","Jack","Ella"]},
   {id:"first", name:"First words", words:["cat","sun","dog","hat","mom","dad","bug","cup"]},
   {id:"sight", name:"Sight words", words:["the","and","see","can","you","look","play","said","here","jump"]},
   {id:"joins", name:"Tricky joins", words:["on","boat","love","wow","box","bee","vine"]},
@@ -284,16 +316,27 @@ function model(text){
   let strokes;
   if(/^[0-9]$/.test(text)){ strokes=DIG[text].map(d=>parse(d).segs); }
   else{
-    const main=[],extras=[]; let ox=0,ey=0;
-    for(const ch of text){ const g=L[ch]; if(!g) continue;
+    // A "run" is one continuous pen stroke of joined letters. Capitals that don't join end the run.
+    const done=[],extras=[]; let run=null,ox=0,ey=0;
+    const endRun=()=>{ if(!run) return; run.push(mv(ey===0?[[0,0],[12,0],[22,-12],[28,-30]]:[[0,-90],[8,-90],[14,-89],[20,-87]],ox)); done.push(run); run=null; };
+    for(const ch of text){
+      const cap=U[ch];
+      if(cap){ endRun();
+        cap.s.forEach((d,k)=>{ const segs=parse(d).segs.map(s=>mv(s,ox)); if(cap.j&&k===cap.s.length-1) run=segs; else done.push(segs); });
+        ey=0; ox+=cap.w; continue; }
+      const g=L[ch]; if(!g) continue;
+      if(!run){ run=[]; ey=0; }
       const b=parse(g.d), S=b.start, E=[0,ey], dx=S[0]-E[0];
-      main.push(mv(g.ov&&ey===0?[E,[E[0]+.72*dx,E[1]],[S[0]+5,E[1]+.5*(S[1]-E[1])],S]:[E,[E[0]+.45*dx,E[1]],[S[0]-.12*dx,E[1]+.5*(S[1]-E[1])],S],ox));
-      b.segs.forEach(s=>main.push(mv(s,ox)));
+      const lead=g.ld&&ey===0?[E,g.ld[0],g.ld[1],S]
+        :g.ov&&ey===0?[E,[E[0]+.72*dx,E[1]],[S[0]+5,E[1]+.5*(S[1]-E[1])],S]
+        :[E,[E[0]+.45*dx,E[1]],[S[0]-.12*dx,E[1]+.5*(S[1]-E[1])],S];
+      run.push(mv(lead,ox));
+      b.segs.forEach(s=>run.push(mv(s,ox)));
       (g.x||[]).forEach(d=>extras.push(parse(d).segs.map(s=>mv(s,ox))));
       ey=g.hi?-90:0; ox+=g.w;
     }
-    main.push(mv(ey===0?[[0,0],[12,0],[22,-12],[28,-30]]:[[0,-90],[8,-90],[14,-89],[20,-87]],ox));
-    strokes=[main,...extras].map(st=>st.map(seg=>seg.map(p=>[p[0]-p[1]*SHEAR,p[1]])));
+    endRun();
+    strokes=[...done,...extras].map(st=>st.map(seg=>seg.map(p=>[p[0]-p[1]*SHEAR,p[1]])));
   }
   const m=finalize(strokes); cache.set(text,m); return m;
 }
@@ -317,7 +360,7 @@ function save(){ try{ localStorage.setItem(KEY,JSON.stringify(DB)); }catch(e){} 
 const S=()=>DB.settings;
 const me=()=>DB.profiles.find(p=>p.id===DB.cur)||DB.profiles[0];
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const clean=s=>String(s).toLowerCase().replace(/[^a-z]/g,"").slice(0,14);
+const clean=s=>String(s).replace(/[^A-Za-z]/g,"").slice(0,14);
 const uid=()=>Math.random().toString(36).slice(2,9);
 
 /* ---------- Little SVG bits ---------- */
@@ -344,7 +387,7 @@ function home(){
   return `<div class="topline"><div class="brand">${SNAIL}<h1>Snail Trail</h1><p>Cursive practice, one loop at a time.</p></div>
     <button class="who" id="who">Writing: <b>${esc(p.name)}</b> ▾</button></div>
   <div class="tiles">
-    <button class="tile big" data-go="letters"><span class="art">${svgOf("abc",true)}</span><span class="name">Letters</span><span class="sub">a to z, with the joining strokes</span><span></span></button>
+    <button class="tile big" data-go="letters"><span class="art">${svgOf("Abc",true)}</span><span class="name">Letters</span><span class="sub">Lowercase a to z and capitals A to Z</span><span></span></button>
     <button class="tile" data-go="words"><span class="art">${svgOf("sun",false)}</span><span class="name">Words</span><span class="sub">Sight words, names, your own lists</span><span></span></button>
     <button class="tile" data-go="numbers"><span class="art">${svgOf("3",false)}</span><span class="name">Numbers</span><span class="sub">0 to 9</span><span></span></button>
     <button class="tile" data-go="stickers"><span class="art"><span class="stickcount">${p.stickers.length}</span></span><span class="name">Sticker book</span><span class="sub">of ${STICKERS.length} stickers collected</span><span></span></button>
@@ -355,14 +398,17 @@ function gridOf(items,kind){
   const p=me();
   return `<div class="grid">${items.map(t=>{const g=p.prog[t]||{};return `<button class="lt" data-trace="${t}" data-kind="${kind}" aria-label="Trace ${t}"><span class="art">${svgOf(t,true)}</span><span class="stars">${stars(g.best||0)}</span></button>`;}).join("")}</div>`;
 }
-function letters(){ return phead("Letters")+gridOf(ALPHA,"letters"); }
+let showCaps=false;
+function letters(){
+  return phead("Letters")+`<div class="row"><span class="segc" role="group" aria-label="Letter case"><button data-case="lower" aria-pressed="${!showCaps}">Lowercase a b c</button><button data-case="caps" aria-pressed="${showCaps}">Capitals A B C</button></span></div>`+gridOf(showCaps?CAPS:ALPHA,"letters");
+}
 function numbers(){ return phead("Numbers")+gridOf(DIGITS,"numbers"); }
 function allLists(){ return [...DB.lists.filter(l=>l.words.length),...LISTS]; }
 function words(){
   const p=me();
   return phead("Words")+`<form class="anyword" id="anyForm"><label for="anyIn">Trace any word</label>
     <input type="text" id="anyIn" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="a name, a pet, anything" maxlength="14">
-    <button class="go" type="submit">Trace it</button><p class="note">Capital letters aren't in yet, so words are traced in lowercase.</p></form>`+
+    <button class="go" type="submit">Trace it</button><p class="note">Start a name with a capital letter, like Leo or Ava.</p></form>`+
   allLists().map(l=>`<div class="wlist"><h3>${esc(l.name)}</h3><div class="chips">${l.words.map((w,i)=>{const g=p.prog["w:"+w]||{};return `<button class="chip" data-trace="${esc(w)}" data-kind="list:${esc(l.id)}" data-i="${i}" aria-label="Trace ${esc(w)}"><span class="art">${svgOf(w,false)}</span><span class="stars">${stars(g.best||0)}</span></button>`;}).join("")}</div></div>`).join("");
 }
 function stickers(){
@@ -387,13 +433,13 @@ function grown(){
     <button class="small" id="addP">+ Add a writer</button>
   </div>
   <div class="sec"><h3>Word lists</h3>
-    <p class="note" style="margin-bottom:10px">One word per line, or separate words with commas. Letters a to z only.</p>
+    <p class="note" style="margin-bottom:10px">One word per line, or separate words with commas. Letters only; capitals are fine.</p>
     ${DB.lists.map(l=>`<div class="listed"><div class="row"><input type="text" id="ln-${l.id}" data-lname="${l.id}" value="${esc(l.name)}" maxlength="30" aria-label="List name"><button class="small danger" data-ldel="${l.id}">Delete list</button></div><textarea id="lw-${l.id}" data-lwords="${l.id}" aria-label="Words">${esc(l.words.join("\n"))}</textarea></div>`).join("")}
     <div class="row" style="margin-top:12px"><button class="small" id="addL">+ New word list</button></div>
   </div>
   <div class="sec"><h3>Progress for ${esc(p.name)}</h3>
     <p class="note" style="margin-bottom:10px">Best stars and finished tracings. Saved in this browser on this device.</p>
-    ${rep(ALPHA)}<div style="height:10px"></div>${rep(DIGITS)}
+    ${rep(ALPHA)}<div style="height:10px"></div>${rep(CAPS)}<div style="height:10px"></div>${rep(DIGITS)}
     ${wordsDone.length?`<h3 style="font-size:18px;margin:14px 0 8px">Recent words</h3><div class="rep">${wordsDone.map(k=>`<div><b style="font-size:16px">${esc(k.slice(2))}</b>${"★".repeat(prog[k].best||0)}<br>${prog[k].tries} done</div>`).join("")}</div>`:""}
     <div class="row" style="margin-top:14px"><button class="small danger" id="resetP">Clear ${esc(p.name)}'s progress</button></div>
   </div>`;
@@ -402,11 +448,12 @@ function bind(){
   view.querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>go(b.dataset.go));
   view.querySelectorAll("[data-trace]").forEach(b=>b.onclick=()=>{
     const kind=b.dataset.kind; let list,idx;
-    if(kind==="letters"){list=ALPHA;idx=ALPHA.indexOf(b.dataset.trace);}
+    if(kind==="letters"){list=CAPS.includes(b.dataset.trace)?CAPS:ALPHA;idx=list.indexOf(b.dataset.trace);}
     else if(kind==="numbers"){list=DIGITS;idx=DIGITS.indexOf(b.dataset.trace);}
     else {const l=allLists().find(x=>"list:"+x.id===kind); list=l.words; idx=+b.dataset.i;}
     go("trace",{list,idx,kind:kind==="letters"||kind==="numbers"?kind:"words"});
   });
+  view.querySelectorAll("[data-case]").forEach(b=>b.onclick=()=>{showCaps=b.dataset.case==="caps"; render();});
   const who=document.getElementById("who"); if(who) who.onclick=pickWriter;
   const gb=document.getElementById("grown"); if(gb) holdButton(gb,()=>go("grown"));
   const f=document.getElementById("anyForm"); if(f) f.onsubmit=e=>{e.preventDefault(); const w=clean(document.getElementById("anyIn").value); if(w) go("trace",{list:[w],idx:0,kind:"words"});};
@@ -477,7 +524,9 @@ function load(){
   setMode(T.mode,true); layout(); reset();
   const g=me().prog[keyOf()];
   if(T.mode==="climb"||!(g&&g.tries)) setTimeout(()=>{ if(T.text===T.list[T.idx]&&!T.done&&route.name==="trace") demo(); },400);
-  say(T.kind==="letters"?T.text.toUpperCase():T.text);
+  // Speak letter names with spelled-out sounds: some voices read any single uppercase letter as "capital ...".
+  if(T.kind==="letters"){ const lo=T.text.toLowerCase(); say((T.text===lo?"lowercase ":"capital ")+NAMES[lo]); }
+  else say(T.text);
 }
 function reset(){ Object.assign(T,{si:0,p:0,lastCk:0,engaged:false,mistakes:0,offN:0,done:false,demo:null,trail:[]}); card.hidden=true; }
 function drawLeaves(){

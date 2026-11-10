@@ -5,7 +5,7 @@ const js=src.match(/<script>([\s\S]*)<\/script>/)[1];
 const geo=js.slice(js.indexOf('const L = {'), js.indexOf('/* ---------- Storage'));
 const api=new Function(geo+'; return {model,svgOf,L,DIG,SP,dist};')();
 const {model,SP,dist}=api;
-const items=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","0","1","2","3","4","5","6","7","8","9","cat","love","boat","jump","snail","wow","box","the"];
+const items=[..."ABCDEFGHIJKLMNOPQRSTUVWXYZ".split(""),"Leo","Ava","Tim","Ella","Jack","Zoe","Bob","Sam","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","0","1","2","3","4","5","6","7","8","9","cat","love","boat","jump","snail","wow","box","the"];
 // proof sheet
 let x=0,y=0,rowH=340,cells=[],maxW=2200,rowX=0;
 const parts=[];
@@ -35,4 +35,4 @@ function shortcut(m,tol){ const s=m.strokes[0]; let p=0,n=s.pts.length; const a=
 const bad=[];
 for(const t of items){const m=model(t); for(const [tol,jit] of [[28,8],[20,6],[14,4]]){ const r=trace(m,tol,jit); if(!r.ok) bad.push(t+' tol'+tol+' '+JSON.stringify(r)); }}
 console.log('letters that could not be finished:',bad.length?bad:'none');
-console.log('shortcut progress (should be well below 1):',items.slice(0,26).map(t=>t+':'+shortcut(model(t),28).toFixed(2)).join(' '));
+console.log('shortcut progress (should be well below 1):',items.filter(t=>t.length===1&&!/[0-9]/.test(t)).map(t=>t+':'+shortcut(model(t),28).toFixed(2)).join(' '));
